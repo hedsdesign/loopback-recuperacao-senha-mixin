@@ -1,0 +1,28 @@
+{
+  "name": "@hedsdesign/loopback-recuperacao-senha-mixin",
+  "version": "0.0.1",
+  "description": "Mixin integrado ao loopback 3.x que adiciona um método que auxilia a recuperação de senha para aplicações angular2+, ionic2+",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"To be refactored\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hedsdesign/loopback-recuperacao-senha-mixin.git"
+  },
+  "keywords": [
+    "loopback",
+    "recuperação",
+    "senha",
+    "ionic2",
+    "angular2",
+    "nodejs",
+    "3.x"
+  ],
+  "author": "Eduardo Miranda Soares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hedsdesign/loopback-recuperacao-senha-mixin/issues"
+  },
+  "homepage": "https://github.com/hedsdesign/loopback-recuperacao-senha-mixin#readme"  
+}
