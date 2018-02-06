@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/@hedsdesign/loopback-log-mixin.png?stars&downloads)](https://nodei.co/npm/@hedsdesign/loopback-log-mixin/)
+[![NPM](https://nodei.co/npm/@hedsdesign/loopback-recuperacao-senha-mixin.png?stars&downloads)](https://nodei.co/npm/@hedsdesign/loopback-recuperacao-senha-mixin/)
 
 Loopback Recuperação de Senha Mixin
 =============
@@ -25,7 +25,7 @@ Adicione as propriedade e `mixins` e a tabela de log no arquivo `server/model-co
     ],
     "mixins": [
      ...
-      "../node_modules/@hedsdesign/loopback-log-mixin/dist/mixins"      
+      "../node_modules/@hedsdesign/loopback-recuperacao-senha-mixin/dist/mixins"      
     ]
   },
   ...
