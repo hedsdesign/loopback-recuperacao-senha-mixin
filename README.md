@@ -73,17 +73,29 @@ Você apenas deverá adicionar o mixin a sua tabela (model)  como o exemplo:
   }
 ```
 
+ou ajustando apenas propriedades principais:
+
+```js
+"mixins": {
+   "RecuperacaoSenha": {       
+        "senderAddress": "naoresponda@seusite.com.br",
+        "subject": "Seu Aplicativo - Chave de alteração da senha",
+        "html": "Sua chave para resetar a senha é: <b>{chave}</b>. Use essa chave para resetar a sua senha."
+    }
+  }
+```
+
 ou ajustando com as opções disponíveis como no exemplo:
 
 ```js
 "mixins": {
-    "RecuperacaoSenha": {
-        'ChaveSenha': 'ChaveSenha',
-        'ChaveSenhaToken': 'ChaveSenhaToken',
-        'emailModel': "Email",
-        'senderAddress': "naoresponda@seusite.com.br",
-        'subject': 'Seu Aplicativo - Chave de alteração da senha',
-        'html': `Sua chave para resetar a senha é: <b>{chave}</b>. Use essa chave para resetar a sua senha.`
+   "RecuperacaoSenha": {
+        "ChaveSenha": "ChaveSenha",
+        "ChaveSenhaToken": "ChaveSenhaToken",
+        "emailModel": "Email",
+        "senderAddress": "naoresponda@seusite.com.br",
+        "subject": "Seu Aplicativo - Chave de alteração da senha",
+        "html": "Sua chave para resetar a senha é: <b>{chave}</b>. Use essa chave para resetar a sua senha."
     }
   }
 ```
@@ -97,6 +109,22 @@ ou ajustando com as opções disponíveis como no exemplo:
 | subject         | string      | Yes           | Assunto do email
 | html            | string      | Yes           | Conteúdo do email que será enviado você tem a propriedade {chave} pra colocar dentro do texto
 
+LÓGICA DE IMPLEMENTAÇÃO
+========
+
+Você solicitaria a recuperação de senha usando o método padrão do loopback `api/model/reset` que ele enviará o email para o usuário com uma chave que ele gerou.
+
+Depois com a chave em mãos você precisa recuperar o token de curta duração para então gerar a nova senha. Então você faz uma solicitação POST  para `api/model/reset-token` com o email e a chave e ele retornará o seguinte:
+
+```js
+
+{
+  "ChaveSenhaToken": "4o7Z0b5IWeCVncfJBU31sh80PdG8yoocd57EjUSZyGpVKrMVhswFtFXvsBoYfvkx"
+}
+
+```
+
+Com esse token você cria uma nova senha usando o método padrão POST `api/model/reset-password?access_token=4o7Z0b5IWeCVncfJBU31sh80PdG8yoocd57EjUSZyGpVKrMVhswFtFXvsBoYfvkx` e a nova senha "newPassword"
 
 
 LICENÇA
