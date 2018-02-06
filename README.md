@@ -77,7 +77,7 @@ ou ajustando com as opções disponíveis como no exemplo:
 
 ```js
 "mixins": {
-    "Log": {
+    "RecuperacaoSenha": {
         'ChaveSenha': 'ChaveSenha',
         'ChaveSenhaToken': 'ChaveSenhaToken',
         'emailModel': "Email",
